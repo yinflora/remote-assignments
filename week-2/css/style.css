@@ -58,6 +58,7 @@ a {
 /* ---- content box ---*/
 .row, .row2 {
     max-width: 1200px;
+    flex-direction: column;
 }
 
 .row2 {
@@ -73,12 +74,16 @@ a {
 }
 
 /* ---- button ----*/
+.call-to-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .btn {
     background-color: #cfdcec;
     border: none;
-    display: block;
-    text-align: center;
-    margin: 0 auto 1.6em;
+    margin-bottom: 1.6em;
     padding: 10px 20px;
 }
 
@@ -88,9 +93,11 @@ a {
 ==================================== */
 
 @media screen and (min-width: 500px) {
-    .row{
-        margin: 0 auto;
+    .row {
         display: flex;
+    }
+    .row, .row2{
+        margin: 0 auto;
         flex-wrap: wrap;
         justify-content: center;
         flex-direction: row;
