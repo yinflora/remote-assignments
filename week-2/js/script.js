@@ -1,5 +1,6 @@
-const message = document.getElementsByClassName('headline');
+const bannerUpdate = document.querySelector('.banner');
 
-message.addEventListener( "click", () => {
-    message.textContent = "Have a Good Time!";
+bannerUpdate.addEventListener( 'click', () => {
+    const title = document.querySelector('h1');
+    title.textContent = 'Have a Good Time!';
 });
