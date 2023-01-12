@@ -18,6 +18,10 @@ a {
     color:black;
 }
 
+ul li {
+    padding-bottom: 1.6em;
+}
+
 
 /* ================================= 
   Base Layout Styles
@@ -37,8 +41,27 @@ a {
     justify-content: space-between;
 }
 
+.nav-container {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    padding: 15px 10px;
+}
+
+.cancel-btn {
+    background-color: white;
+    border: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px 10px;
+    font-size: 1.6em;
+}
+
 .main-nav {
-    display: none;
     list-style: none;
 }
 
