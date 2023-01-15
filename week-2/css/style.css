@@ -9,19 +9,18 @@
 }
 
 body {
-    font-family:'Times New Roman', Times, serif;
-    color:black;
+    font-family: "Times New Roman", Times, serif;
+    color: black;
 }
 
 a {
     text-decoration: none;
-    color:black;
+    color: black;
 }
 
-ul li {
+li {
     padding-bottom: 1.6em;
 }
-
 
 /* ================================= 
   Base Layout Styles
@@ -68,19 +67,20 @@ ul li {
 
 /* ---- banner & Title ---- */
 
-.banner, .title {
-	text-align: center;
+.banner,
+.title {
+    text-align: center;
     margin-bottom: 1.6em;
 }
 
 .banner {
-	background-color: #cfdcec;
+    background-color: #cfdcec;
     padding: 3.2em 0;
 }
 
-
 /* ---- content box ---*/
-.row, .row2 {
+.row,
+.row2 {
     max-width: 1200px;
     flex-direction: column;
 }
@@ -94,7 +94,7 @@ ul li {
     margin: 0 10px 20px;
     background-color: #8a98a8;
     text-align: center;
-    height: 150px
+    height: 150px;
 }
 
 /* ---- button ----*/
@@ -111,7 +111,6 @@ ul li {
     padding: 10px 20px;
 }
 
-
 /* ================================= 
   Media Query
 ==================================== */
@@ -120,26 +119,39 @@ ul li {
     .row {
         display: flex;
     }
-    .row, .row2{
+    .row,
+    .row2 {
         margin: 0 auto;
         flex-wrap: wrap;
         justify-content: center;
         flex-direction: row;
     }
-    .col{
+    .col {
         width: 45%;
     }
 }
 
-@media screen and (min-width: 800px){
-    .fa-bars{
+@media screen and (min-width: 800px) {
+    .fa-bars {
         display: none;
     }
-    .main-nav{
+    .nav-container {
+        display: inline-block;
+        background-color: transparent;
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+    }
+    .main-nav {
         display: flex;
         flex-direction: row;
     }
-    li{
+    li {
         padding-left: 2em;
+        padding-bottom: 0;
+    }
+    .cancel-btn {
+        display: none;
     }
 }
