@@ -2,32 +2,35 @@
 // Complete the function below to calculate the total price of all products after applying a discount.
 
 function calculate(data) {
-    // your code here
-    // const discountAmount = data.discount;
-    // for (let i = 0; i <= data.products.length; i++) {
-    //     let productsPrice = data.products[i].price;
-    //     productsPrice = productsPrice++;
-    // }
-    // return discountAmount * productsPrice;
-    const productsPrice = data.products[0].price + data.products[1].price + data.products[2].price;
-    const discountAmount = productsPrice * data.discount;
-    return productsPrice - discountAmount;
+    let productsTotalPrice = 0;
+
+    // data.products.forEach( (item) => {
+    //     productsTotalPrice += item;
+    // });
+
+    for (let i = 0; i < data.products.length; i++) {
+        productsTotalPrice += data.products[i].price;
+    }
+
+    let discountedAmount = productsTotalPrice * data.discount;
+    return productsTotalPrice - discountedAmount;
 }
+
 const discountedPrice = calculate({
     discount: 0.1,
     products: [
         {
             name: "Product 1",
-            price: 100
+            price: 100,
         },
         {
             name: "Product 2",
-            price: 700
+            price: 700,
         },
         {
             name: "Product 3",
-            price: 250
-        }
-    ]
+            price: 250,
+        },
+    ],
 });
-console.log(discountedPrice) // show the total price of all products after applying a discount
+console.log(discountedPrice); // show the total price of all products after applying a discount
