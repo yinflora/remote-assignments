@@ -6,7 +6,16 @@ router.get("/", (req, res) => {
 });
 
 router.get("/getData", (req, res) => {
-    res.render("getData");
+    let answer;
+    if (isNaN(req.query.number)) {
+        answer = "Wrong Parameter";
+    } else {
+        answer =
+            ((1 + Number(req.query.number)) * Number(req.query.number)) / 2;
+    }
+
+    // res.render("getData", answer);
+    res.send(`${answer}`);
 });
 
 module.exports = router;
