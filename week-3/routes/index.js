@@ -24,4 +24,18 @@ router.post("/getData", (req, res) => {
   res.send(`${answer}`);
 });
 
+router.get("/trackName", (req, res) => {
+  res.render("trackName", { name: req.cookies.username });
+});
+
+router.post("/trackName", (req, res) => {
+  res.cookie("username", req.body.username);
+  res.render("trackName", { name: req.body.username });
+});
+
+// router.get("/myName", (req, res) => {
+//   let name = req.cookies.username;
+//   res.send(`Hello, ${name}`);
+// });
+
 module.exports = router;
