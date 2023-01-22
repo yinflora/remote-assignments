@@ -24,18 +24,27 @@ router.post("/getData", (req, res) => {
   res.send(`${answer}`);
 });
 
+router.get("/myName", (req, res) => {
+  const name = req.cookies.username;
+  if (name) {
+    res.render("myName", { name });
+  } else {
+    res.redirect("/trackName");
+  }
+});
+
 router.get("/trackName", (req, res) => {
-  res.render("trackName", { name: req.cookies.username });
+  const name = req.cookies.username;
+  if (name) {
+    res.redirect("/myName");
+  } else {
+    res.render("trackName");
+  }
 });
 
 router.post("/trackName", (req, res) => {
   res.cookie("username", req.body.username);
-  res.render("trackName", { name: req.body.username });
+  res.redirect("/myName");
 });
-
-// router.get("/myName", (req, res) => {
-//   let name = req.cookies.username;
-//   res.send(`Hello, ${name}`);
-// });
 
 module.exports = router;
