@@ -12,6 +12,7 @@ router.get("/", (req, res) => {
   } else {
     answer = ((1 + Number(number)) * Number(number)) / 2;
   }
+  
   res.send(`${answer}`);
 });
 

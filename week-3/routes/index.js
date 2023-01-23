@@ -33,11 +33,9 @@ router.post("/trackName", (req, res) => {
   res.redirect("/myName");
 });
 
-router.get("/trackName", (req, res) => {
-  res.cookie("username", req.query.name);
-  const name = res.cookies.username;
-  res.redirect("/myName");
-});
-
+// router.get("/trackName", (req, res) => {
+//   res.cookie("name", req.query.name);
+//   res.redirect("/myName");
+// });
 
 module.exports = router;

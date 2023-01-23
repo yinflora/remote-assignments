@@ -25,7 +25,8 @@
           .catch( error => console.log( `Error message: ${error}`) )
       };
 
-      submit.addEventListener("click", () => {
+      submit.addEventListener("click", (e) => {
+        e.preventDefault(); // <form>表單預設行為按下submit後，在還沒執行function前就會把「欄位內的資料」都提交到後端資料庫去，導致頁面重整，所以需要取消瀏覽器預設行為
         const number = document.querySelector(".input").value;
         request(number);
       });
