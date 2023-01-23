@@ -20,8 +20,10 @@ router.get("/myName", (req, res) => {
 });
 
 router.get("/trackName", (req, res) => {
-  const name = req.cookies.username;
-  if (name) {
+  if (req.query.name){
+    res.cookie('username', req.query.name)
+    res.redirect("/myName");
+  } else if (req.cookies.username){
     res.redirect("/myName");
   } else {
     res.render("trackName");
@@ -32,10 +34,5 @@ router.post("/trackName", (req, res) => {
   res.cookie("username", req.body.username);
   res.redirect("/myName");
 });
-
-// router.get("/trackName", (req, res) => {
-//   res.cookie("name", req.query.name);
-//   res.redirect("/myName");
-// });
 
 module.exports = router;
