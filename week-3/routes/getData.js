@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  let answer;
   let number = req.query.number;
+  let answer;
 
   if (!number) {
     answer = "Lack of Parameter";

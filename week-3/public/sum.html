@@ -9,7 +9,7 @@
   <body>
     <form>
       <label>Please enter your number:</label>
-      <input type="number" name="number" class="input" />
+      <input type="text" class="input" />
       <button type="submit" class="submit">Get Result!</button>
     </form>
     <p class="result"></p>
@@ -20,9 +20,9 @@
       function request(number){
         const sumResult = document.querySelector(".result");
         fetch(`http://localhost:3000/getData?number=${number}`)
-        .then( res => res.text() )
-        .then( text => sumResult.innerHTML = `Answer: ${text}`)
-        .catch( error => console.log(`Error message: ${error}`))
+          .then( res => res.text() )
+          .then( text => sumResult.innerHTML = `Answer: ${text}` )
+          .catch( error => console.log( `Error message: ${error}`) )
       };
 
       submit.addEventListener("click", () => {
