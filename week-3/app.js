@@ -10,9 +10,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static("public"));
 
-const routes = require("./routes");
+const mainRoutes = require("./routes");
+const dataRoutes = require("./routes/getData");
 
-app.use(routes);
+app.use(mainRoutes);
+app.use("/getData", dataRoutes);
 
 app.listen(3000, () => {
   console.log("The application is running on localhost:3000!");
