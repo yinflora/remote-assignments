@@ -4,10 +4,8 @@ Complete the function below to show a delayed result in the console.
 -------------------------------- */
 
 function delayedResult(n1, n2, delayTime, callback) {
-    let sum = n1 + n2;
-    let result = `${sum} (${n1}+${n2})`;
-    let timeoutId = window.setTimeout(result, delayTime);
-    callback(timeoutId);
+    const result = `${n1+n2} (${n1}+${n2})`;
+    window.setTimeout( (() => callback(result)), delayTime);
 }
 delayedResult(4, 5, 3000, function(result) {
 console.log(result);
