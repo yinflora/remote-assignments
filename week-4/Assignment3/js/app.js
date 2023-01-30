@@ -1,7 +1,11 @@
 function App() {
     return (
-        <div className="wrapper">
+        <div>
             <Header />
+
+            <Banner />
+
+            <ContentBox />
         </div>
     );
 };
@@ -24,7 +28,62 @@ function Header() {
             </div>
         </header>
     );
-}
+};
+
+function Banner() {
+    return (
+        // JSX expressions must have one parent element in React
+        <> 
+            <div className="banner">
+                <h1 className="headline">Welcome Message</h1>
+            </div>
+        </>
+    );
+};
+
+function ContentBox() {
+    return (
+        <> 
+            <div className="title">
+                <h2>Section Title</h2>
+            </div>
+
+            <div className="row">
+                <div className="col">
+                    <p>Content Box 1</p>
+                </div>
+                <div class="col">
+                    <p>Content Box 2</p>
+                </div>
+                <div class="col">
+                    <p>Content Box 3</p>
+                </div>
+                <div class="col">
+                    <p>Content Box 4</p>
+                </div>
+            </div>
+
+            <div class="call-to-action">
+                <button class="btn">Call to Action</button>
+             </div>
+
+            <div class="row2">
+                <div class="col">
+                    <p>Content Box 5</p>
+                </div>
+                <div class="col">
+                    <p>Content Box 6</p>
+                </div>
+                <div class="col">
+                    <p>Content Box 7</p>
+                </div>
+                <div class="col">
+                    <p>Content Box 8</p>
+                </div>
+            </div>
+        </>
+    );
+};
 
 
 // 取得在 HTML 中事先定義好的容器元素，以作為之後 React 產生 DOM elements 結果的輸出容器
