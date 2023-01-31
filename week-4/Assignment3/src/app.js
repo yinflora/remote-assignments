@@ -17,7 +17,7 @@ function App() {
 
 function Header() {
     // Track the menu state with useSate, and set the initial value as false
-    const [ menuOpen, setMenuOpen] = useState(false);
+    const [ menuOpen, setMenuOpen ] = useState(false);
 
     // Function for switching the menu state
     function toggleMenu() {
@@ -51,7 +51,6 @@ function Banner() {
         // JSX expressions must have one parent element in React
         <> 
             <div className="banner">
-                {/* Update the message state */}
                 <h1 className="headline" onClick={() => setMessage("Have a Good Time!")}>{ message }</h1>
             </div>
         </>
@@ -59,6 +58,14 @@ function Banner() {
 };
 
 function ContentBox() {
+    // Track the content area state with useSate, and set the initial value as false
+    const [ showContent, setShowContent ] = useState(false);
+
+    // Function for switching the content area state
+    function toggleButton() {
+        setShowContent(!showContent);
+    };
+
     return (
         <> 
             <div className="title">
@@ -81,10 +88,10 @@ function ContentBox() {
             </div>
 
             <div className="call-to-action">
-                <button className="btn">Call to Action</button>
+                <button className="btn" onClick={ toggleButton }>Call to Action</button>
              </div>
 
-            <div className="row2">
+            <div className="row2" style={{ display: showContent ? "flex" : "none" }}>
                 <div className="col">
                     <p>Content Box 5</p>
                 </div>
