@@ -16,19 +16,27 @@ function App() {
 };
 
 function Header() {
+    // Track the menu state with useSate, and set the initial value as false
+    const [ menuOpen, setMenuOpen] = useState(false);
+
+    // Function for switching the menu state
+    function toggleMenu() {
+        setMenuOpen(!menuOpen);
+    };
+
     return (
         <header className="top-nav">
             <div className="main-header">
                 <p className="name"><a href="#">Website Title / Logo</a></p>
-                <i className="fa-solid fa-bars"></i>
-                <div className="nav-container">
+                <i className="fa-solid fa-bars" onClick={ toggleMenu }></i>
+                <div className="nav-container" style={{ display: menuOpen ? "inline-block" : "none"}}>
                     <ul className="main-nav">
                         <li><a href="#">Item1</a></li>
                         <li><a href="#">Item2</a></li>
                         <li><a href="#">Item3</a></li>
                         <li><a href="#">Item4</a></li>
                     </ul>
-                    <button className="cancel-btn">X</button>
+                    <button className="cancel-btn" onClick={ toggleMenu }>X</button>
                 </div>
             </div>
         </header>
@@ -36,7 +44,7 @@ function Header() {
 };
 
 function Banner() {
-    // Track the message state with useSate
+    // Track the message state with useSate, and set the initial value as "Welcome Message"
     const [ message, setMessage ] = useState("Welcome Message");
 
     return (
