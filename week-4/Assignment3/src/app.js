@@ -1,7 +1,7 @@
 // ./src/app.js
 
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
 function App() {
     return (
