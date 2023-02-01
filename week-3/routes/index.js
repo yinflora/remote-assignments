@@ -15,23 +15,18 @@ router.get("/myName", (req, res) => {
   if (name) {
     res.render("myName", { name });
   } else {
-    res.redirect("/trackName");
+    res.render("myName");
   }
+});
+
+router.post("/myName", (req, res) => {
+  const name = req.body.username;
+  res.cookie("username", name);
+  res.redirect("/trackName?name=" + name);
 });
 
 router.get("/trackName", (req, res) => {
-  if (req.query.name){
-    res.cookie('username', req.query.name)
-    res.redirect("/myName");
-  } else if (req.cookies.username){
-    res.redirect("/myName");
-  } else {
-    res.render("trackName");
-  }
-});
-
-router.post("/trackName", (req, res) => {
-  res.cookie("username", req.body.username);
+  res.cookie('username', req.query.name);
   res.redirect("/myName");
 });
 
