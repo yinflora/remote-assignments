@@ -11,7 +11,7 @@
 }
 
 body {
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     color: black;
 }
 
@@ -22,6 +22,7 @@ a {
 
 li {
     padding-bottom: 1.6em;
+    list-style: none;
 }
 
 /* ================================= 
@@ -63,8 +64,8 @@ li {
     font-size: 1.6em;
 }
 
-.main-nav {
-    list-style: none;
+.horizontal-menu {
+    display: none;
 }
 
 /* ---- banner & Title ---- */
@@ -111,49 +112,4 @@ li {
     border: none;
     margin-bottom: 1.6em;
     padding: 10px 20px;
-}
-
-/* ================================= 
-  Media Query
-==================================== */
-
-@media screen and (min-width: 500px) {
-    .row {
-        display: flex;
-    }
-    .row,
-    .row2 {
-        margin: 0 auto;
-        flex-wrap: wrap;
-        justify-content: center;
-        flex-direction: row;
-    }
-    .col {
-        width: 45%;
-    }
-}
-
-@media screen and (min-width: 800px) {
-    .fa-bars {
-        display: none;
-    }
-    .nav-container {
-        display: inline-block;
-        background-color: transparent;
-        position: static;
-        width: auto;
-        height: auto;
-        padding: 0;
-    }
-    .main-nav {
-        display: flex;
-        flex-direction: row;
-    }
-    li {
-        padding-left: 2em;
-        padding-bottom: 0;
-    }
-    .cancel-btn {
-        display: none;
-    }
 }
