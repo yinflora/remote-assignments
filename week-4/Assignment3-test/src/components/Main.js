@@ -30,8 +30,7 @@ const Main = () => {
                     Call to Action
                 </button>
             </div>
-            {/* <Button className="call-to-action" /> */}
-            <div
+            {/* <div
                 className="row2"
                 style={{ display: showContent ? 'flex' : 'none' }}
             >
@@ -47,22 +46,22 @@ const Main = () => {
                 <div className="col">
                     <p>Content Box 8</p>
                 </div>
-            </div>
-            {/* <ContentBoxes
+            </div> */}
+            <ContentBoxes
                 className="row2"
+                text={[
+                    'Content Box 5',
+                    'Content Box 6',
+                    'Content Box 7',
+                    'Content Box 8',
+                ]}
                 style={{ display: showContent ? 'flex' : 'none' }}
-            /> */}
+            />
         </>
     );
 };
 
 const ContentBoxes = (props) => {
-    // let boxArr = [
-    //     'Content Box 1',
-    //     'Content Box 2',
-    //     'Content Box 3',
-    //     'Content Box 4',
-    // ];
     let contentList = props.text.map((box, index) => (
         <div className="col">
             <p key={index}>{box}</p>
