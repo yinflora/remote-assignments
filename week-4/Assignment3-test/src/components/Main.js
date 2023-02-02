@@ -15,7 +15,15 @@ const Main = () => {
                 <h2>Section Title</h2>
             </div>
 
-            <ContentBoxes className="row" />
+            <ContentBoxes
+                className="row"
+                text={[
+                    'Content Box 1',
+                    'Content Box 2',
+                    'Content Box 3',
+                    'Content Box 4',
+                ]}
+            />
 
             <div className="call-to-action">
                 <button className="btn" onClick={toggleButton}>
@@ -49,15 +57,15 @@ const Main = () => {
 };
 
 const ContentBoxes = (props) => {
-    let boxArr = [
-        'Content Box 1',
-        'Content Box 2',
-        'Content Box 3',
-        'Content Box 4',
-    ];
-    let contentList = boxArr.map((box) => (
+    // let boxArr = [
+    //     'Content Box 1',
+    //     'Content Box 2',
+    //     'Content Box 3',
+    //     'Content Box 4',
+    // ];
+    let contentList = props.text.map((box, index) => (
         <div className="col">
-            <p>{box}</p>
+            <p key={index}>{box}</p>
         </div>
     ));
 
