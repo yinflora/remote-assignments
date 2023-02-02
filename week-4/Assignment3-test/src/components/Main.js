@@ -15,20 +15,7 @@ const Main = () => {
                 <h2>Section Title</h2>
             </div>
 
-            <div className="row">
-                <div className="col">
-                    <p>Content Box 1</p>
-                </div>
-                <div className="col">
-                    <p>Content Box 2</p>
-                </div>
-                <div className="col">
-                    <p>Content Box 3</p>
-                </div>
-                <div className="col">
-                    <p>Content Box 4</p>
-                </div>
-            </div>
+            <ContentBoxes className="row" />
 
             <div className="call-to-action">
                 <button className="btn" onClick={toggleButton}>
@@ -36,7 +23,6 @@ const Main = () => {
                 </button>
             </div>
             {/* <Button className="call-to-action" /> */}
-
             <div
                 className="row2"
                 style={{ display: showContent ? 'flex' : 'none' }}
@@ -54,26 +40,28 @@ const Main = () => {
                     <p>Content Box 8</p>
                 </div>
             </div>
+            {/* <ContentBoxes
+                className="row2"
+                style={{ display: showContent ? 'flex' : 'none' }}
+            /> */}
         </>
     );
 };
 
-// const Button = (props) => {
-// Track the content area state with useSate, and set the initial value as false
-// const [showContent, setShowContent] = useState(false);
+const ContentBoxes = (props) => {
+    let boxArr = [
+        'Content Box 1',
+        'Content Box 2',
+        'Content Box 3',
+        'Content Box 4',
+    ];
+    let contentList = boxArr.map((box) => (
+        <div className="col">
+            <p>{box}</p>
+        </div>
+    ));
 
-// Function for switching the content area state
-//     function toggleButton() {
-//         setShowContent(!showContent);
-
-//         return (
-//             <div className={props.className}>
-//                 <button className="btn" onClick={toggleButton}>
-//                     Call to Action
-//                 </button>
-//             </div>
-//         );
-//     }
-// };
+    return <div className={props.className}>{contentList}</div>;
+};
 
 export default Main;

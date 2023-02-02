@@ -35,7 +35,7 @@ const Header = () => {
 
 const MenuItems = (props) => {
     let itemArr = ['item1', 'item2', 'item3', 'item4'];
-    let menuList = itemArr.map((item) => <li>{item}</li>);
+    let menuList = itemArr.map((item, index) => <li key={index}>{item}</li>);
     return <ul className={props.className}>{menuList}</ul>;
 };
 
