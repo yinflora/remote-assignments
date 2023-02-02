@@ -82,14 +82,9 @@ li {
 }
 
 /* ---- content box ---*/
-.row,
-.row2 {
+.row {
     max-width: 1200px;
     flex-direction: column;
-}
-
-.row2 {
-    display: none;
 }
 
 .col {

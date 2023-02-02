@@ -30,25 +30,9 @@ const Main = () => {
                     Call to Action
                 </button>
             </div>
-            {/* <div
-                className="row2"
-                style={{ display: showContent ? 'flex' : 'none' }}
-            >
-                <div className="col">
-                    <p>Content Box 5</p>
-                </div>
-                <div className="col">
-                    <p>Content Box 6</p>
-                </div>
-                <div className="col">
-                    <p>Content Box 7</p>
-                </div>
-                <div className="col">
-                    <p>Content Box 8</p>
-                </div>
-            </div> */}
+
             <ContentBoxes
-                className="row2"
+                className="row"
                 text={[
                     'Content Box 5',
                     'Content Box 6',
@@ -62,13 +46,17 @@ const Main = () => {
 };
 
 const ContentBoxes = (props) => {
-    let contentList = props.text.map((box, index) => (
+    let contentList = props.text.map((box) => (
         <div className="col">
-            <p key={index}>{box}</p>
+            <p key={box}>{box}</p>
         </div>
     ));
 
-    return <div className={props.className}>{contentList}</div>;
+    return (
+        <div className={props.className} style={props.style}>
+            {contentList}
+        </div>
+    );
 };
 
 export default Main;
