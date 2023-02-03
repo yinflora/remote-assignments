@@ -6,7 +6,7 @@ html(lang="en")
         if name
             h2 Welcome, #{name}!
         else 
-            form(action="/myName", method="post") 
+            form(action="/trackName", method="post") 
                 label Please enter your name: 
                     input(type="text", name="username")
                 button(type="submit") Submit
