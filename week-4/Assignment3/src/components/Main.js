@@ -46,7 +46,7 @@ const Main = () => {
 };
 
 const ContentBoxes = (props) => {
-    let contentList = props.text.map((box) => (
+    const contentList = props.text.map((box) => (
         <div className="col">
             <p key={box}>{box}</p>
         </div>
