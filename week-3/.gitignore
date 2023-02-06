@@ -3,4 +3,3 @@ node_modules/
 
 # Templates
 views(forPractice)/
-views/trackName.pug
