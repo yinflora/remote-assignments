@@ -25,11 +25,12 @@ router.post('/trackName', (req, res) => {
     }
 });
 
-router.get('/trackName', (req, res) => {
+// Get Request
+/* router.get('/trackName', (req, res) => {
     if (req.query.name) {
         res.cookie('username', req.query.name);
         res.redirect('/myName');
     }
-});
+}); */
 
 module.exports = router;
