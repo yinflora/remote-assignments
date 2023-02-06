@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <div className="App">
+            <Items />
+            <button>More</button>
+        </div>
+    );
+};
+
+const Items = () => {
+    const [data, setData] = useState([]);
+    // const [page, setPage] = useState('1');
+
+    useEffect(() => {
+        fetch(
+            'https://api.github.com/orgs/facebook/repos?per_page=5&amp;page=1'
+        )
+            .then((res) => res.json())
+            .then((data) => setData(data));
+    }, []);
+
+    const itemList = data.map((item) => (
+        <div className="item" key={item.id}>
+            <div className="title">
+                <span>{item.name}</span>
+                <span>{item.visibility}</span>
+            </div>
+            <p className="description">{item.description}</p>
+            <div className="topic">
+                {item.topics.map((topic) => (
+                    <span className="topic-item" key={topic}>
+                        {topic}
+                    </span>
+                ))}
+            </div>
+        </div>
+    ));
+
+    return <div className="box">{itemList}</div>;
+};
 
 export default App;
