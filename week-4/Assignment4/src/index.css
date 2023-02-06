@@ -1,0 +1,80 @@
+/* ---- Element Style ---- */
+.App {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+p,
+span {
+    font-size: 0.75rem;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    margin: 1rem auto;
+}
+
+/* ---- Text Color ---- */
+.title :first-child,
+button,
+.topic span {
+    color: #276ad3;
+}
+
+.title :last-child,
+p {
+    color: #59616a;
+}
+
+/* ---- Layout Style ---- */
+/* .box */
+.box {
+    border: 1px solid #d0d7dd;
+    border-radius: 8px;
+    width: 70vw;
+    margin: 5vh auto;
+}
+
+.box :last-child {
+    border-bottom: none;
+}
+
+/* .item */
+.item {
+    border-bottom: 1px solid #d0d7dd;
+    padding: 1rem;
+}
+
+/* .title */
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.title :first-child {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.title :last-child {
+    border: 1px solid #d0d7dd;
+    border-radius: 2em;
+    padding: 2px 8px;
+    margin-left: 8px;
+}
+
+/* .topic */
+.topic {
+    margin: 12px 0;
+}
+
+.topic span {
+    background-color: #e1f3fe;
+    border: 1px solid #e1f3fe;
+    border-radius: 2em;
+    padding: 2px 8px;
+    margin-right: 2px;
+}
