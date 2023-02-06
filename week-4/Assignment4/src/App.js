@@ -1,27 +1,33 @@
 import { useState, useEffect } from 'react';
 
 const App = () => {
-    return (
-        <div className="App">
-            <Items />
-            <button>More</button>
-        </div>
-    );
-};
-
-const Items = () => {
     const [data, setData] = useState([]);
-    // const [page, setPage] = useState('1');
+    // const [page, setPage] = useState(1);
 
     useEffect(() => {
         fetch(
+            // `https://api.github.com/orgs/facebook/repos?per_page=5&amp;page=${page}`
             'https://api.github.com/orgs/facebook/repos?per_page=5&amp;page=1'
         )
             .then((res) => res.json())
             .then((data) => setData(data));
     }, []);
 
-    const itemList = data.map((item) => (
+    // function togglePage() {
+    //   setPage(page++);
+    // }
+
+    return (
+        <div className="App">
+            <Items itemData={data} />
+            {/* <button onClick={togglePage}>More</button> */}
+            <button>More</button>
+        </div>
+    );
+};
+
+const Items = ({ itemData }) => {
+    const itemList = itemData.map((item) => (
         <div className="item" key={item.id}>
             <div className="title">
                 <span>{item.name}</span>
