@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client';
 import '../public/index.css';
 
 const App = () => {
+    const counterList = ['1', '2', '3'];
+    const generatedCounter = counterList.map((counter) => <Counter />);
+
     return (
         <div className="App">
-            <div>
-                <Counter />
-            </div>
+            <div className="counter-wrapper">{generatedCounter}</div>
         </div>
     );
 };
