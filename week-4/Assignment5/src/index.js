@@ -4,6 +4,15 @@ import '../public/index.css';
 
 const App = () => {
     const [allNumber, setAllNumber] = useState(0);
+    const [counterNum, setCounterNum] = useState(['1', '2', '3']);
+
+    const counterList = counterNum.map((counter, index) => (
+        <Counter allNumber={allNumber} key={index} />
+    ));
+
+    const addCounter = () => {
+        setCounterNum([...counterNum, 'newCounter']);
+    };
 
     return (
         <div className="App">
@@ -11,9 +20,12 @@ const App = () => {
                 <button onClick={() => setAllNumber(allNumber + 1)}>
                     All + 1
                 </button>
-                <Counter allNumber={allNumber} />
-                <Counter allNumber={allNumber} />
-                <Counter allNumber={allNumber} />
+
+                {counterList}
+
+                <button className="add-counter" onClick={addCounter}>
+                    Add a Counter
+                </button>
             </div>
         </div>
     );

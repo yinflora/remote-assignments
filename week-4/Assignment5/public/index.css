@@ -27,3 +27,7 @@ button {
     gap: 0 1.5rem;
     align-items: center;
 }
+
+.add-counter {
+    width: 9rem;
+}
