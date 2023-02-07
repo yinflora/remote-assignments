@@ -5,7 +5,9 @@ import '../public/index.css';
 const App = () => {
     return (
         <div className="App">
-            <Counter />
+            <div>
+                <Counter />
+            </div>
         </div>
     );
 };
@@ -13,10 +15,10 @@ const App = () => {
 const Counter = () => {
     const [number, setNumber] = useState(0);
     return (
-        <>
+        <div className="counter">
             <button onClick={() => setNumber(number + 1)}>+1</button>
             <p>{number}</p>
-        </>
+        </div>
     );
 };
 
