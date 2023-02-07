@@ -1,5 +1,5 @@
 /* ---- Element Style ---- */
-.App {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -8,6 +8,10 @@
 p,
 span {
     font-size: 0.75rem;
+}
+
+p {
+    padding-top: 0.5rem;
 }
 
 button {
@@ -44,8 +48,12 @@ p {
 
 /* .item */
 .item {
+    max-width: 70vw;
     border-bottom: 1px solid #d0d7dd;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 /* .title */
@@ -68,7 +76,10 @@ p {
 
 /* .topic */
 .topic {
-    margin: 12px 0;
+    padding-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
 }
 
 .topic span {
@@ -76,5 +87,4 @@ p {
     border: 1px solid #e1f3fe;
     border-radius: 2em;
     padding: 2px 8px;
-    margin-right: 2px;
 }
