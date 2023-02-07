@@ -3,22 +3,29 @@ import ReactDOM from 'react-dom/client';
 import '../public/index.css';
 
 const App = () => {
-    const counterList = ['1', '2', '3'];
-    const generatedCounter = counterList.map((counter) => <Counter />);
+    const [allNumber, setAllNumber] = useState(0);
 
     return (
         <div className="App">
-            <div className="counter-wrapper">{generatedCounter}</div>
+            <div className="counter-wrapper">
+                <button onClick={() => setAllNumber(allNumber + 1)}>
+                    All + 1
+                </button>
+                <Counter allNumber={allNumber} />
+                <Counter allNumber={allNumber} />
+                <Counter allNumber={allNumber} />
+            </div>
         </div>
     );
 };
 
-const Counter = () => {
+const Counter = ({ allNumber }) => {
     const [number, setNumber] = useState(0);
+
     return (
         <div className="counter">
             <button onClick={() => setNumber(number + 1)}>+1</button>
-            <p>{number}</p>
+            <p>{number + allNumber}</p>
         </div>
     );
 };
